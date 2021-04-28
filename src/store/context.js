@@ -13,17 +13,12 @@ const Context = React.createContext({
     fetchOptions: () => { }
 
 })
-
-
 export const ContextProvider = props => {
-
-
     const [options, setOptions] = useState([])
     const [currentSection, setCurrentSection] = useState(null)
     const [inputValue, setInputValue] = useState("")
     const [posts, setPosts] = useState([])
     const [currentPage, setCurrentPage] = useState(null)
-
     const showContent = (queryParams = "") => {
         axios.get(`/search?${process.env.REACT_APP_API_KEY}${queryParams}`)
             .then(res => res)

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from "./Posts.module.sass"
-
+import Context from "../../store/context"
 
 
 const Post = ({ post }) => {
@@ -14,16 +14,14 @@ const Post = ({ post }) => {
             <h6 className={classes.Date}>{post.webPublicationDate.slice(0, 10)}</h6>
         </li >
     )
-
 }
+const Posts = () => {
 
-
-const Posts = props => {
-
+    const context = useContext(Context);
     return (
         <div className={classes.PostsWrapper}>
             <ul className={classes.PostsList}>
-                {props.posts.map(post => {
+                {context.posts.map(post => {
                     return <Post key={post.id} post={post} />
                 })}
             </ul>

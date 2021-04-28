@@ -18,13 +18,9 @@ const App = () => {
     <div>
       <Header />
       <div className="App">
-        <SearchForm handlers={{
-          sectionChange: context.onSectionChange,
-          inputChange: context.onInputChange,
-          submitForm: context.onSubmitForm
-        }} inputValue={context.inputValue} options={context.options} fetchOptions={context.fetchOptions} />
+        <SearchForm />
       </div>
-      <Posts posts={context.posts || []} />
+      <Posts />
     </div>
   );
 }
